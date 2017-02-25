@@ -5,29 +5,23 @@ This is a simple script to download all [VVO](https://www.vvo-online.de) stops a
 The script uses the following endpoint:
 
 ```
-http://delfi1.vvo-online.de:8080/delfi3/XML_STOPLIST_REQUEST?tariffZones=1&coordOutputFormat=WGS84[DD.DDDDD]
+http://delfi1.vvo-online.de:8080/delfi3/XSLT_COORD_REQUEST?&jsonp=&boundingBox=&boundingBoxLU={minx}%3A{miny}%3AWGS84%5BDD.DDDDD%5D&boundingBoxRL={maxx}%3A{maxy}%3AWGS84%5BDD.DDDDD%5D&coordOutputFormat=WGS84%5BGGZHTXX%5D&type_1=STOP&outputFormat=json&inclFilter=1
 ```
+
+It starts from bounding box `(13, 50.5, 15, 52)` and works down to smaller quadrants.
 
 The script produces CSV output in the following format:
 
 ```
-stop_id,stop_name,stop_lon,stop_lat,stop_code
-"33006767","Rossendorf (Dresden), Gutsweg",13.9359,51.05518,""
+"stop_id","stop_name","stop_lon","stop_lat","stop_code"
+"33003270","Markersbach/Gottleu., Kindertagesstätte",13.9830046808,50.8361016491,"de:14628:3270"
 ```
-
-# Prerequisites
-
-These scrips use PostGIS to filter stops belonging to administrative regions covered by the transport company.  
-See [this project](https://github.com/highsource/postgis-verwaltungsgebiete) for a simple way to create a PostGIS database with administrative regions.
 
 # Usage
 
-## Windows
-
 ```
 npm install
-00-export-unfiltered-stops
-01-filter-stops
+node index.js
 ```
 
 # Disclaimer

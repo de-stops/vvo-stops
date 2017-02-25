@@ -5,6 +5,6 @@
 	"files":        ["index.js"],
 	"engines" :     {"node": ">=6"},
 	"dependencies": {
-		"efa-export-stops-by-list": "^0.0.1"
+		"efa-export-stops-by-coordinates": "^0.1.0"
 	}
 }
