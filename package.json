@@ -1,0 +1,10 @@
+{
+	"name":         "vvo-stops",
+	"version":      "0.0.1",
+	"main":         "index.js",
+	"files":        ["index.js"],
+	"engines" :     {"node": ">=6"},
+	"dependencies": {
+		"efa-export-stops-by-list": "^0.0.1"
+	}
+}
